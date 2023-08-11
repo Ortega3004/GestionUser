@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
- <tittle>CALCULAR EDAD</tittle>
+    <title>Verificación de Edad</title>
 </head>
 <body>
-  <h1>Calculadora de edad</h1>
-  <form action="calcularedad.php" method="post">
-  <label for="nacimiento> Fecha de nacimiento:</label>
-  <input type="date" id="nacimiento" name="nacimiento" required>
-  <input type="submit" value="Calcular Edad">
-</form>
+    <h1>Verificación de Edad</h1>
+    
+    <p>Ingresa tu edad: <input type="number" id="edad" min="0" max="150"></p>
+    
+    <button onclick="verificarEdad()">Verificar</button>
+    
+    <p id="resultado"></p>
+
+    <script>
+        function verificarEdad() {
+            var edad = document.getElementById("edad").value;
+            var resultado = document.getElementById("resultado");
+            
+            if (edad >= 18) {
+                resultado.innerHTML = "Eres mayor de edad.";
+            } else {
+                resultado.innerHTML = "Eres menor de edad.";
+            }
+        }
+    </script>
 </body>
 </html>
